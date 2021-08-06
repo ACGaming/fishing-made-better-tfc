@@ -13,87 +13,88 @@ public class FishData {
         @SerializedName("night")    NIGHT,
         @SerializedName("any")      ANY
     }
-    
-    public enum FishingLiquid {
-    	@SerializedName("water") 	WATER,
-    	@SerializedName("lava")		LAVA,
-    	@SerializedName("void")		VOID,
-    	@SerializedName("any")		ANY
-    }
-    
-    public enum BaitEnum {
-    	@SerializedName("fruit") FRUIT,
-    	@SerializedName("grain") GRAIN,
-    	@SerializedName("vegetable") VEGETABLE,
-    	@SerializedName("meatNormal") MEAT_NORMAL,
-    	@SerializedName("meatExtra") MEAT_EXTRA,
-    	@SerializedName("smallPredatorAQC") SMALL_PREDATOR_AQC,
-    	@SerializedName("largePredatorAQC") LARGE_PREDATOR_AQC,
-    	@SerializedName("oceanPredatorAQC") OCEAN_PREDATOR_AQC,
-    	@SerializedName("herbivoreAQC") HERBIVORE_AQC;
-    	
-    	Map<String, Integer[]> fruit = new HashMap<String, Integer[]>(){{
-        	put("minecraft:apple", new Integer[] {0});
-        	put("minecraft:melon", new Integer[] {0});
-        	}};
-    	
-    	Map<String, Integer[]> grain = new HashMap<String, Integer[]>(){{
-        	put("minecraft:wheat_seeds", new Integer[] {0});
-        	put("minecraft:pumpkin_seeds", new Integer[] {0});
-        	put("minecraft:melon_seeds", new Integer[] {0});
-        	put("minecraft:beetroot_seeds", new Integer[] {0});
-    	}};
-    	
-    	Map<String, Integer[]> vegetable = new HashMap<String, Integer[]>(){{
-        	put("minecraft:carrot", new Integer[] {0});
-        	put("minecraft:potato", new Integer[] {0});
-        	put("minecraft:beetroot", new Integer[] {0});
-    	}};
-    	
-    	Map<String, Integer[]> meatNormal = new HashMap<String, Integer[]>(){{
-        	put("minecraft:fish", new Integer[] {2});
-        	put("minecraft:spider_eye", new Integer[] {0});
-        	put("minecraft:rotten_flesh", new Integer[] {0});
-    	}};
-    	
-    	Map<String, Integer[]> meatExtra = new HashMap<String, Integer[]>(){{
-        	put("minecraft:porkchop", new Integer[] {0});
-        	put("minecraft:beef", new Integer[] {0});
-        	put("minecraft:chicken", new Integer[] {0});
-        	put("minecraft:rabbit", new Integer[] {0});
-        	put("minecraft:mutton", new Integer[] {0});
-    	}};
-    	
-    	Map<String, Integer[]> small_predator_aqc = new HashMap<String, Integer[]>(){{
-        	put("aquaculture:fish", new Integer[] {19, 37});
-    	}};
-    	
-    	Map<String, Integer[]> large_predator_aqc = new HashMap<String, Integer[]>(){{
-    		put("aquaculture:fish", new Integer[] {0, 1, 17});
-    	}};
-    	
-    	Map<String, Integer[]> ocean_predator_aqc = new HashMap<String, Integer[]>(){{
-    		put("aquaculture:fish", new Integer[] {9, 10, 15, 16, 26});
-    	}};
 
-    	Map<String, Integer[]> herbivore_aqc = new HashMap<String, Integer[]>(){{
-    		put("aquaculture:food", new Integer[] {0, 1});
-    	}};
-        	
-    	public Map<String, Integer[]> getValues(BaitEnum value) {
-    		switch(value) {
-    		case FRUIT : return fruit;
-    		case GRAIN : return grain;
-    		case VEGETABLE : return vegetable;
-    		case MEAT_NORMAL : return meatNormal;
-    		case MEAT_EXTRA : return meatExtra;
-    		case SMALL_PREDATOR_AQC : return small_predator_aqc;
-    		case LARGE_PREDATOR_AQC : return large_predator_aqc;
-    		case OCEAN_PREDATOR_AQC : return ocean_predator_aqc;
-    		case HERBIVORE_AQC : return herbivore_aqc;
-    		default : return vegetable;
-    		}
-    	}
+    public enum FishingLiquid {
+        @SerializedName("fresh_water") 	FRESH_WATER,
+        @SerializedName("salt_water") 	SALT_WATER,
+        @SerializedName("lava")		LAVA,
+        @SerializedName("void")		VOID,
+        @SerializedName("any")		ANY
+    }
+
+    public enum BaitEnum {
+        @SerializedName("fruit") FRUIT,
+        @SerializedName("grain") GRAIN,
+        @SerializedName("vegetable") VEGETABLE,
+        @SerializedName("meatNormal") MEAT_NORMAL,
+        @SerializedName("meatExtra") MEAT_EXTRA,
+        @SerializedName("smallPredatorAQC") SMALL_PREDATOR_AQC,
+        @SerializedName("largePredatorAQC") LARGE_PREDATOR_AQC,
+        @SerializedName("oceanPredatorAQC") OCEAN_PREDATOR_AQC,
+        @SerializedName("herbivoreAQC") HERBIVORE_AQC;
+
+        Map<String, Integer[]> fruit = new HashMap<String, Integer[]>(){{
+            put("minecraft:apple", new Integer[] {0});
+            put("minecraft:melon", new Integer[] {0});
+        }};
+
+        Map<String, Integer[]> grain = new HashMap<String, Integer[]>(){{
+            put("minecraft:wheat_seeds", new Integer[] {0});
+            put("minecraft:pumpkin_seeds", new Integer[] {0});
+            put("minecraft:melon_seeds", new Integer[] {0});
+            put("minecraft:beetroot_seeds", new Integer[] {0});
+        }};
+
+        Map<String, Integer[]> vegetable = new HashMap<String, Integer[]>(){{
+            put("minecraft:carrot", new Integer[] {0});
+            put("minecraft:potato", new Integer[] {0});
+            put("minecraft:beetroot", new Integer[] {0});
+        }};
+
+        Map<String, Integer[]> meatNormal = new HashMap<String, Integer[]>(){{
+            put("minecraft:fish", new Integer[] {2});
+            put("minecraft:spider_eye", new Integer[] {0});
+            put("minecraft:rotten_flesh", new Integer[] {0});
+        }};
+
+        Map<String, Integer[]> meatExtra = new HashMap<String, Integer[]>(){{
+            put("minecraft:porkchop", new Integer[] {0});
+            put("minecraft:beef", new Integer[] {0});
+            put("minecraft:chicken", new Integer[] {0});
+            put("minecraft:rabbit", new Integer[] {0});
+            put("minecraft:mutton", new Integer[] {0});
+        }};
+
+        Map<String, Integer[]> small_predator_aqc = new HashMap<String, Integer[]>(){{
+            put("aquaculture:fish", new Integer[] {19, 37});
+        }};
+
+        Map<String, Integer[]> large_predator_aqc = new HashMap<String, Integer[]>(){{
+            put("aquaculture:fish", new Integer[] {0, 1, 17});
+        }};
+
+        Map<String, Integer[]> ocean_predator_aqc = new HashMap<String, Integer[]>(){{
+            put("aquaculture:fish", new Integer[] {9, 10, 15, 16, 26});
+        }};
+
+        Map<String, Integer[]> herbivore_aqc = new HashMap<String, Integer[]>(){{
+            put("aquaculture:food", new Integer[] {0, 1});
+        }};
+
+        public Map<String, Integer[]> getValues(BaitEnum value) {
+            switch(value) {
+                case FRUIT : return fruit;
+                case GRAIN : return grain;
+                case VEGETABLE : return vegetable;
+                case MEAT_NORMAL : return meatNormal;
+                case MEAT_EXTRA : return meatExtra;
+                case SMALL_PREDATOR_AQC : return small_predator_aqc;
+                case LARGE_PREDATOR_AQC : return large_predator_aqc;
+                case OCEAN_PREDATOR_AQC : return ocean_predator_aqc;
+                case HERBIVORE_AQC : return herbivore_aqc;
+                default : return vegetable;
+            }
+        }
     }
 
     public String fishId;
@@ -121,7 +122,7 @@ public class FishData {
     public boolean trackable;
     public boolean biomeBlacklist;
     public boolean dimensionBlacklist;
-    public List<String> biomeTagList = new ArrayList<>(); 
+    public List<String> biomeTagList = new ArrayList<>();
     public List<Integer> dimensionList = new ArrayList<>();
     public int timeOutsideOfWater;
     public boolean allowScaling;
@@ -136,43 +137,43 @@ public class FishData {
     public Map<String, Integer[]> baitItemMap = new HashMap<>();
 
     public static FishData createData(String fishId
-            , String itemId
-            , int itemMetaData
-            , String description
-            , int minFishTime
-            , int maxFishTime
-            , int minErrorVariance
-            , int maxErrorVariance
-            , int minWeight
-            , int maxWeight
-            , TimeToFish time
-            , FishingLiquid liquid
-            , boolean rainRequired
-            , boolean thunderRequired
-            , int rarity
-            , int minDeepLevel
-            , int maxDeepLevel
-            , int minYLevel
-            , int maxYLevel
-            , int maxLightLevel
-            , int reproductionTime
-            , int eatingFrequency
-            , boolean trackable
-            , boolean biomeBlacklist
-            , boolean dimensionBlacklist
-            , String[] biomeTagList
-            , int[] dimensionList
-            , int timeOutsideOfWater
-            , boolean allowScaling
-            , String scalingItem
-            , int scalingItemMetadata
-            , boolean scalingUseWeight
-            , boolean allowFillet
-            , boolean defaultFillet
-            , String filletItem
-            , int filletItemMetadata
-            , boolean filletUseWeight
-            , BaitEnum[] baitEnumArray) {
+        , String itemId
+        , int itemMetaData
+        , String description
+        , int minFishTime
+        , int maxFishTime
+        , int minErrorVariance
+        , int maxErrorVariance
+        , int minWeight
+        , int maxWeight
+        , TimeToFish time
+        , FishingLiquid liquid
+        , boolean rainRequired
+        , boolean thunderRequired
+        , int rarity
+        , int minDeepLevel
+        , int maxDeepLevel
+        , int minYLevel
+        , int maxYLevel
+        , int maxLightLevel
+        , int reproductionTime
+        , int eatingFrequency
+        , boolean trackable
+        , boolean biomeBlacklist
+        , boolean dimensionBlacklist
+        , String[] biomeTagList
+        , int[] dimensionList
+        , int timeOutsideOfWater
+        , boolean allowScaling
+        , String scalingItem
+        , int scalingItemMetadata
+        , boolean scalingUseWeight
+        , boolean allowFillet
+        , boolean defaultFillet
+        , String filletItem
+        , int filletItemMetadata
+        , boolean filletUseWeight
+        , BaitEnum[] baitEnumArray) {
         FishData fishData = new FishData();
 
         fishData.fishId = fishId;

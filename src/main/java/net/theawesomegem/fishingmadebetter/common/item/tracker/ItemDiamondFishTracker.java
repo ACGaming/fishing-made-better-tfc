@@ -4,6 +4,6 @@ import net.theawesomegem.fishingmadebetter.common.data.FishData.FishingLiquid;
 
 public class ItemDiamondFishTracker extends ItemFishTracker {
     public ItemDiamondFishTracker() {
-        super(TrackingVision.BEST, FishingLiquid.WATER, 150, "fish_tracker_diamond");
+        super(TrackingVision.BEST, FishingLiquid.SALT_WATER, 150, "fish_tracker_diamond");
     }
 }

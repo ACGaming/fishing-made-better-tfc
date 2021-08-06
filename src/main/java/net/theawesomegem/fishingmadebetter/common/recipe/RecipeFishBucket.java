@@ -77,7 +77,8 @@ public class RecipeFishBucket extends net.minecraftforge.registries.IForgeRegist
             
             if(itemStack.isEmpty()) return null;
             else if(itemStack.getItem() == Items.WATER_BUCKET) bucketSlot = i;
-            else if(BetterFishUtil.isBetterFish(itemStack) && !BetterFishUtil.isDead(itemStack, worldTime) && CustomConfigurationHandler.fishDataMap.get(BetterFishUtil.getFishId(itemStack)).liquid.equals(FishData.FishingLiquid.WATER)) fishSlot = i;
+            else if(BetterFishUtil.isBetterFish(itemStack) && !BetterFishUtil.isDead(itemStack, worldTime) && CustomConfigurationHandler.fishDataMap.get(BetterFishUtil.getFishId(itemStack)).liquid.equals(FishData.FishingLiquid.FRESH_WATER)) fishSlot = i;
+            else if(BetterFishUtil.isBetterFish(itemStack) && !BetterFishUtil.isDead(itemStack, worldTime) && CustomConfigurationHandler.fishDataMap.get(BetterFishUtil.getFishId(itemStack)).liquid.equals(FishData.FishingLiquid.SALT_WATER)) fishSlot = i;
             else return null;
         }
         Integer[] slots = new Integer[2];

@@ -42,7 +42,7 @@ public class DefaultFishes {//TODO: all this shit
                 1,//minWeight
                 2,//maxWeight
                 FishData.TimeToFish.ANY,//Time of day for fish
-                FishData.FishingLiquid.WATER,//Liquid to fish in
+                FishData.FishingLiquid.SALT_WATER,//Liquid to fish in
                 false,//Rain required
                 false,//Thunder required
                 50,//Fish rarity
@@ -83,7 +83,7 @@ public class DefaultFishes {//TODO: all this shit
                 1,//minWeight
                 2,//maxWeight
                 FishData.TimeToFish.ANY,//Time of day for fish
-                FishData.FishingLiquid.WATER,//Liquid to fish in
+                FishData.FishingLiquid.SALT_WATER,//Liquid to fish in
                 false,//Rain required
                 false,//Thunder required
                 40,//Fish rarity
@@ -124,7 +124,7 @@ public class DefaultFishes {//TODO: all this shit
                 10,//minWeight
                 40,//maxWeight
                 FishData.TimeToFish.ANY,//Time of day for fish
-                FishData.FishingLiquid.WATER,//Liquid to fish in
+                FishData.FishingLiquid.SALT_WATER,//Liquid to fish in
                 false,//Rain required
                 false,//Thunder required
                 10,//Fish rarity
@@ -165,7 +165,7 @@ public class DefaultFishes {//TODO: all this shit
                 5,//minWeight
                 10,//maxWeight
                 FishData.TimeToFish.ANY,//Time of day for fish
-                FishData.FishingLiquid.WATER,//Liquid to fish in
+                FishData.FishingLiquid.SALT_WATER,//Liquid to fish in
                 false,//Rain required
                 false,//Thunder required
                 20,//Fish rarity
@@ -206,7 +206,7 @@ public class DefaultFishes {//TODO: all this shit
                 10,//minWeight
                 40,//maxWeight
                 FishData.TimeToFish.ANY,//Time of day for fish
-                FishData.FishingLiquid.WATER,//Liquid to fish in
+                FishData.FishingLiquid.SALT_WATER,//Liquid to fish in
                 false,//Rain required
                 false,//Thunder required
                 6,//Fish rarity
@@ -247,7 +247,7 @@ public class DefaultFishes {//TODO: all this shit
                 10,//minWeight
                 20,//maxWeight
                 FishData.TimeToFish.ANY,//Time of day for fish
-                FishData.FishingLiquid.WATER,//Liquid to fish in
+                FishData.FishingLiquid.SALT_WATER,//Liquid to fish in
                 false,//Rain required
                 false,//Thunder required
                 12,//Fish rarity
@@ -288,7 +288,7 @@ public class DefaultFishes {//TODO: all this shit
                 20,//minWeight
                 50,//maxWeight
                 FishData.TimeToFish.NIGHT,//Time of day for fish
-                FishData.FishingLiquid.WATER,//Liquid to fish in
+                FishData.FishingLiquid.SALT_WATER,//Liquid to fish in
                 false,//Rain required
                 false,//Thunder required
                 4,//Fish rarity
@@ -329,7 +329,7 @@ public class DefaultFishes {//TODO: all this shit
                 30,//minWeight
                 50,//maxWeight
                 FishData.TimeToFish.ANY,//Time of day for fish
-                FishData.FishingLiquid.WATER,//Liquid to fish in
+                FishData.FishingLiquid.SALT_WATER,//Liquid to fish in
                 false,//Rain required
                 false,//Thunder required
                 2,//Fish rarity
@@ -372,7 +372,7 @@ public class DefaultFishes {//TODO: all this shit
                 5,
                 12,
                 FishData.TimeToFish.ANY,
-                FishData.FishingLiquid.WATER,
+                FishData.FishingLiquid.SALT_WATER,
                 false,
                 false,
                 6,
@@ -413,7 +413,7 @@ public class DefaultFishes {//TODO: all this shit
                 15,//minWeight
                 25,//maxWeight
                 FishData.TimeToFish.ANY,//Time of day for fish
-                FishData.FishingLiquid.WATER,//Liquid to fish in
+                FishData.FishingLiquid.SALT_WATER,//Liquid to fish in
                 false,//Rain required
                 false,//Thunder required
                 30,//Fish rarity
@@ -454,7 +454,7 @@ public class DefaultFishes {//TODO: all this shit
                 10,//minWeight
                 40,//maxWeight
                 FishData.TimeToFish.ANY,//Time of day for fish
-                FishData.FishingLiquid.WATER,//Liquid to fish in
+                FishData.FishingLiquid.SALT_WATER,//Liquid to fish in
                 false,//Rain required
                 false,//Thunder required
                 8,//Fish rarity
@@ -495,7 +495,7 @@ public class DefaultFishes {//TODO: all this shit
                 50,//minWeight
                 300,//maxWeight
                 FishData.TimeToFish.ANY,//Time of day for fish
-                FishData.FishingLiquid.WATER,//Liquid to fish in
+                FishData.FishingLiquid.SALT_WATER,//Liquid to fish in
                 false,//Rain required
                 false,//Thunder required
                 2,//Fish rarity
@@ -536,7 +536,7 @@ public class DefaultFishes {//TODO: all this shit
                 50,//minWeight
                 200,//maxWeight
                 FishData.TimeToFish.ANY,//Time of day for fish
-                FishData.FishingLiquid.WATER,//Liquid to fish in
+                FishData.FishingLiquid.SALT_WATER,//Liquid to fish in
                 false,//Rain required
                 false,//Thunder required
                 3,//Fish rarity
@@ -577,7 +577,7 @@ public class DefaultFishes {//TODO: all this shit
                 500,//minWeight
                 800,//maxWeight
                 FishData.TimeToFish.ANY,//Time of day for fish
-                FishData.FishingLiquid.WATER,//Liquid to fish in
+                FishData.FishingLiquid.SALT_WATER,//Liquid to fish in
                 false,//Rain required
                 false,//Thunder required
                 1,//Fish rarity
@@ -618,7 +618,7 @@ public class DefaultFishes {//TODO: all this shit
                 1000,//minWeight
                 1500,//maxWeight
                 FishData.TimeToFish.ANY,//Time of day for fish
-                FishData.FishingLiquid.WATER,//Liquid to fish in
+                FishData.FishingLiquid.SALT_WATER,//Liquid to fish in
                 false,//Rain required
                 false,//Thunder required
                 1,//Fish rarity
@@ -659,7 +659,7 @@ public class DefaultFishes {//TODO: all this shit
                 50,//minWeight
                 200,//maxWeight
                 FishData.TimeToFish.ANY,//Time of day for fish
-                FishData.FishingLiquid.WATER,//Liquid to fish in
+                FishData.FishingLiquid.SALT_WATER,//Liquid to fish in
                 false,//Rain required
                 false,//Thunder required
                 2,//Fish rarity
@@ -700,7 +700,7 @@ public class DefaultFishes {//TODO: all this shit
                 10,//minWeight
                 100,//maxWeight
                 FishData.TimeToFish.ANY,//Time of day for fish
-                FishData.FishingLiquid.WATER,//Liquid to fish in
+                FishData.FishingLiquid.SALT_WATER,//Liquid to fish in
                 false,//Rain required
                 false,//Thunder required
                 5,//Fish rarity
@@ -743,7 +743,7 @@ public class DefaultFishes {//TODO: all this shit
                 1,//minWeight
                 1,//maxWeight
                 FishData.TimeToFish.ANY,//Time of day for fish
-                FishData.FishingLiquid.WATER,//Liquid to fish in
+                FishData.FishingLiquid.SALT_WATER,//Liquid to fish in
                 false,//Rain required
                 false,//Thunder required
                 8,//Fish rarity
@@ -784,7 +784,7 @@ public class DefaultFishes {//TODO: all this shit
                 1,//minWeight
                 5,//maxWeight
                 FishData.TimeToFish.ANY,//Time of day for fish
-                FishData.FishingLiquid.WATER,//Liquid to fish in
+                FishData.FishingLiquid.SALT_WATER,//Liquid to fish in
                 false,//Rain required
                 false,//Thunder required
                 4,//Fish rarity
@@ -825,7 +825,7 @@ public class DefaultFishes {//TODO: all this shit
                 1,//minWeight
                 1,//maxWeight
                 FishData.TimeToFish.ANY,//Time of day for fish
-                FishData.FishingLiquid.WATER,//Liquid to fish in
+                FishData.FishingLiquid.SALT_WATER,//Liquid to fish in
                 false,//Rain required
                 false,//Thunder required
                 20,//Fish rarity
@@ -868,7 +868,7 @@ public class DefaultFishes {//TODO: all this shit
                 1,//minWeight
                 3,//maxWeight
                 FishData.TimeToFish.ANY,//Time of day for fish
-                FishData.FishingLiquid.WATER,//Liquid to fish in
+                FishData.FishingLiquid.SALT_WATER,//Liquid to fish in
                 false,//Rain required
                 false,//Thunder required
                 10,//Fish rarity
@@ -909,7 +909,7 @@ public class DefaultFishes {//TODO: all this shit
                 5,//minWeight
                 20,//maxWeight
                 FishData.TimeToFish.ANY,//Time of day for fish
-                FishData.FishingLiquid.WATER,//Liquid to fish in
+                FishData.FishingLiquid.SALT_WATER,//Liquid to fish in
                 false,//Rain required
                 false,//Thunder required
                 5,//Fish rarity
@@ -950,7 +950,7 @@ public class DefaultFishes {//TODO: all this shit
                 15,//minWeight
                 40,//maxWeight
                 FishData.TimeToFish.ANY,//Time of day for fish
-                FishData.FishingLiquid.WATER,//Liquid to fish in
+                FishData.FishingLiquid.SALT_WATER,//Liquid to fish in
                 false,//Rain required
                 false,//Thunder required
                 10,//Fish rarity
@@ -991,7 +991,7 @@ public class DefaultFishes {//TODO: all this shit
                 100,//minWeight
                 200,//maxWeight
                 FishData.TimeToFish.ANY,//Time of day for fish
-                FishData.FishingLiquid.WATER,//Liquid to fish in
+                FishData.FishingLiquid.SALT_WATER,//Liquid to fish in
                 false,//Rain required
                 false,//Thunder required
                 4,//Fish rarity
@@ -1034,7 +1034,7 @@ public class DefaultFishes {//TODO: all this shit
                 30,//minWeight
                 80,//maxWeight
                 FishData.TimeToFish.ANY,//Time of day for fish
-                FishData.FishingLiquid.WATER,//Liquid to fish in
+                FishData.FishingLiquid.SALT_WATER,//Liquid to fish in
                 false,//Rain required
                 false,//Thunder required
                 8,//Fish rarity
@@ -1075,7 +1075,7 @@ public class DefaultFishes {//TODO: all this shit
                 10,//minWeight
                 20,//maxWeight
                 FishData.TimeToFish.ANY,//Time of day for fish
-                FishData.FishingLiquid.WATER,//Liquid to fish in
+                FishData.FishingLiquid.SALT_WATER,//Liquid to fish in
                 false,//Rain required
                 false,//Thunder required
                 30,//Fish rarity
@@ -1116,7 +1116,7 @@ public class DefaultFishes {//TODO: all this shit
                 1,//minWeight
                 1,//maxWeight
                 FishData.TimeToFish.ANY,//Time of day for fish
-                FishData.FishingLiquid.WATER,//Liquid to fish in
+                FishData.FishingLiquid.SALT_WATER,//Liquid to fish in
                 false,//Rain required
                 false,//Thunder required
                 60,//Fish rarity
@@ -1157,7 +1157,7 @@ public class DefaultFishes {//TODO: all this shit
                 10,//minWeight
                 100,//maxWeight
                 FishData.TimeToFish.ANY,//Time of day for fish
-                FishData.FishingLiquid.WATER,//Liquid to fish in
+                FishData.FishingLiquid.SALT_WATER,//Liquid to fish in
                 false,//Rain required
                 false,//Thunder required
                 20,//Fish rarity
@@ -1198,7 +1198,7 @@ public class DefaultFishes {//TODO: all this shit
                 40,//minWeight
                 80,//maxWeight
                 FishData.TimeToFish.ANY,//Time of day for fish
-                FishData.FishingLiquid.WATER,//Liquid to fish in
+                FishData.FishingLiquid.SALT_WATER,//Liquid to fish in
                 false,//Rain required
                 false,//Thunder required
                 16,//Fish rarity
@@ -1239,7 +1239,7 @@ public class DefaultFishes {//TODO: all this shit
                 1,//minWeight
                 10,//maxWeight
                 FishData.TimeToFish.ANY,//Time of day for fish
-                FishData.FishingLiquid.WATER,//Liquid to fish in
+                FishData.FishingLiquid.SALT_WATER,//Liquid to fish in
                 false,//Rain required
                 false,//Thunder required
                 30,//Fish rarity
@@ -1280,7 +1280,7 @@ public class DefaultFishes {//TODO: all this shit
                 1,//minWeight
                 5,//maxWeight
                 FishData.TimeToFish.DAY,//Time of day for fish
-                FishData.FishingLiquid.WATER,//Liquid to fish in
+                FishData.FishingLiquid.SALT_WATER,//Liquid to fish in
                 false,//Rain required
                 false,//Thunder required
                 40,//Fish rarity
@@ -1323,7 +1323,7 @@ public class DefaultFishes {//TODO: all this shit
                 80,//minWeight
                 200,//maxWeight
                 FishData.TimeToFish.ANY,//Time of day for fish
-                FishData.FishingLiquid.WATER,//Liquid to fish in
+                FishData.FishingLiquid.SALT_WATER,//Liquid to fish in
                 false,//Rain required
                 false,//Thunder required
                 8,//Fish rarity
@@ -1364,7 +1364,7 @@ public class DefaultFishes {//TODO: all this shit
                 2,//minWeight
                 6,//maxWeight
                 FishData.TimeToFish.DAY,//Time of day for fish
-                FishData.FishingLiquid.WATER,//Liquid to fish in
+                FishData.FishingLiquid.SALT_WATER,//Liquid to fish in
                 false,//Rain required
                 false,//Thunder required
                 60,//Fish rarity
@@ -1405,7 +1405,7 @@ public class DefaultFishes {//TODO: all this shit
                 5,//minWeight
                 10,//maxWeight
                 FishData.TimeToFish.ANY,//Time of day for fish
-                FishData.FishingLiquid.WATER,//Liquid to fish in
+                FishData.FishingLiquid.SALT_WATER,//Liquid to fish in
                 false,//Rain required
                 false,//Thunder required
                 60,//Fish rarity
@@ -1446,7 +1446,7 @@ public class DefaultFishes {//TODO: all this shit
                 1,//minWeight
                 2,//maxWeight
                 FishData.TimeToFish.ANY,//Time of day for fish
-                FishData.FishingLiquid.WATER,//Liquid to fish in
+                FishData.FishingLiquid.SALT_WATER,//Liquid to fish in
                 false,//Rain required
                 false,//Thunder required
                 80,//Fish rarity
@@ -1489,7 +1489,7 @@ public class DefaultFishes {//TODO: all this shit
                 10,//minWeight
                 30,//maxWeight
                 FishData.TimeToFish.ANY,//Time of day for fish
-                FishData.FishingLiquid.WATER,//Liquid to fish in
+                FishData.FishingLiquid.SALT_WATER,//Liquid to fish in
                 false,//Rain required
                 false,//Thunder required
                 40,//Fish rarity
@@ -1530,7 +1530,7 @@ public class DefaultFishes {//TODO: all this shit
                 10,//minWeight
                 30,//maxWeight
                 FishData.TimeToFish.ANY,//Time of day for fish
-                FishData.FishingLiquid.WATER,//Liquid to fish in
+                FishData.FishingLiquid.SALT_WATER,//Liquid to fish in
                 false,//Rain required
                 false,//Thunder required
                 60,//Fish rarity
@@ -1573,7 +1573,7 @@ public class DefaultFishes {//TODO: all this shit
                 1,//minWeight
                 1,//maxWeight
                 FishData.TimeToFish.ANY,//Time of day for fish
-                FishData.FishingLiquid.WATER,//Liquid to fish in
+                FishData.FishingLiquid.SALT_WATER,//Liquid to fish in
                 false,//Rain required
                 false,//Thunder required
                 20,//Fish rarity
@@ -1624,7 +1624,7 @@ public class DefaultFishes {//TODO: all this shit
                 1,//minWeight
                 1,//maxWeight
                 FishData.TimeToFish.ANY,//Time of day for fish
-                FishData.FishingLiquid.WATER,//Liquid to fish in
+                FishData.FishingLiquid.SALT_WATER,//Liquid to fish in
                 false,//Rain required
                 false,//Thunder required
                 15,//Fish rarity
@@ -1665,7 +1665,7 @@ public class DefaultFishes {//TODO: all this shit
                 8,
                 14,
                 FishData.TimeToFish.ANY,
-                FishData.FishingLiquid.WATER,
+                FishData.FishingLiquid.SALT_WATER,
                 false,
                 false,
                 6,
@@ -1706,7 +1706,7 @@ public class DefaultFishes {//TODO: all this shit
                 10,
                 40,
                 FishData.TimeToFish.ANY,
-                FishData.FishingLiquid.WATER,
+                FishData.FishingLiquid.SALT_WATER,
                 false,
                 false,
                 20,
@@ -1747,7 +1747,7 @@ public class DefaultFishes {//TODO: all this shit
                 2,
                 8,
                 FishData.TimeToFish.ANY,
-                FishData.FishingLiquid.WATER,
+                FishData.FishingLiquid.SALT_WATER,
                 false,
                 false,
                 20,

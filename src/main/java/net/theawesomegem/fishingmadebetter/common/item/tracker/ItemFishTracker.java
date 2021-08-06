@@ -18,6 +18,8 @@ import net.minecraft.world.World;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import net.dries007.tfc.objects.fluids.FluidsTFC;
 import net.theawesomegem.fishingmadebetter.ModInfo;
 import net.theawesomegem.fishingmadebetter.common.capability.fishing.FishingCapabilityProvider;
 import net.theawesomegem.fishingmadebetter.common.capability.fishing.IFishingData;
@@ -97,11 +99,17 @@ public abstract class ItemFishTracker extends Item {
         		return new ActionResult<ItemStack>(EnumActionResult.FAIL, itemstack);
         	}
         }
-        else if(trackingLiquid.equals(FishingLiquid.WATER)) {
-        	if(blockClicked.getMaterial() != Material.WATER) {
-        		playerIn.sendMessage(new TextComponentString("This probe can only work in Water."));
+        else if(trackingLiquid.equals(FishingLiquid.FRESH_WATER)) {
+        	if(blockClicked.getMaterial() != FluidsTFC.FRESH_WATER.get().getBlock().getBlockState().getBaseState().getMaterial()) {
+        		playerIn.sendMessage(new TextComponentString("This probe can only work in Fresh Water."));
         		return new ActionResult<ItemStack>(EnumActionResult.FAIL, itemstack);
         	}
+        }
+        else if(trackingLiquid.equals(FishingLiquid.SALT_WATER)) {
+            if(blockClicked.getMaterial() != FluidsTFC.SALT_WATER.get().getBlock().getBlockState().getBaseState().getMaterial()) {
+                playerIn.sendMessage(new TextComponentString("This probe can only work in Salt Water."));
+                return new ActionResult<ItemStack>(EnumActionResult.FAIL, itemstack);
+            }
         }
         else if(trackingLiquid.equals(FishingLiquid.LAVA)) {
         	if(blockClicked.getMaterial() != Material.LAVA) {
@@ -110,17 +118,29 @@ public abstract class ItemFishTracker extends Item {
         	}
         } 
         
-        if(blockClicked.getMaterial() == MaterialLiquid.WATER) {
+        if(blockClicked.getMaterial() == FluidsTFC.FRESH_WATER.get().getBlock().getBlockState().getBaseState().getMaterial()) {
         	int waterCount = 0;
         	for(BlockPos posit : BlockPos.getAllInBox(pos.getX()-2, pos.getY()-3, pos.getZ()-2, pos.getX()+2, pos.getY(), pos.getZ()+2)) {
         		Material mat = worldIn.getBlockState(posit).getMaterial();
-        		if(mat == MaterialLiquid.WATER) waterCount++;
+        		if(mat == FluidsTFC.FRESH_WATER.get().getBlock().getBlockState().getBaseState().getMaterial()) waterCount++;
         		if(waterCount >= 25) break;
         	}
         	if(waterCount < 25) {
         		playerIn.sendMessage(new TextComponentString("It is too shallow at this location for the probe to work properly."));
         		return new ActionResult<ItemStack>(EnumActionResult.FAIL, itemstack);
         	}
+        }
+        if(blockClicked.getMaterial() == FluidsTFC.SALT_WATER.get().getBlock().getBlockState().getBaseState().getMaterial()) {
+            int waterCount = 0;
+            for(BlockPos posit : BlockPos.getAllInBox(pos.getX()-2, pos.getY()-3, pos.getZ()-2, pos.getX()+2, pos.getY(), pos.getZ()+2)) {
+                Material mat = worldIn.getBlockState(posit).getMaterial();
+                if(mat == FluidsTFC.SALT_WATER.get().getBlock().getBlockState().getBaseState().getMaterial()) waterCount++;
+                if(waterCount >= 25) break;
+            }
+            if(waterCount < 25) {
+                playerIn.sendMessage(new TextComponentString("It is too shallow at this location for the probe to work properly."));
+                return new ActionResult<ItemStack>(EnumActionResult.FAIL, itemstack);
+            }
         }
         if(blockClicked.getMaterial() == MaterialLiquid.LAVA) {
         	int lavaCount = 0;
@@ -154,7 +174,8 @@ public abstract class ItemFishTracker extends Item {
         tooltip.add(rarityText);
         
         String liquidText;
-        if(FishingLiquid.WATER.equals(getLiquidEnum())) 			liquidText = "Can probe Water";
+        if(FishingLiquid.FRESH_WATER.equals(getLiquidEnum())) 			liquidText = "Can probe Fresh Water";
+        else if(FishingLiquid.SALT_WATER.equals(getLiquidEnum())) 			liquidText = "Can probe Salt Water";
         else if (FishingLiquid.LAVA.equals(getLiquidEnum())) 		liquidText = "Can probe Lava";
         else if (FishingLiquid.VOID.equals(getLiquidEnum())) 		liquidText = "Can probe the Void";
         else liquidText = "Can probe anything";

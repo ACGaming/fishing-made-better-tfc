@@ -25,8 +25,8 @@ public class FishBucketRecipeWrapper implements ICraftingRecipeWrapper {
 		List<ItemStack> fishStackList = new ArrayList<ItemStack>();
 		
 		for(FishData fishData : CustomConfigurationHandler.fishDataMap.values()) {
-			if(!fishData.liquid.equals(FishingLiquid.WATER)) continue;
-			
+			if(!fishData.liquid.equals(FishingLiquid.FRESH_WATER) && !fishData.liquid.equals(FishingLiquid.SALT_WATER)) continue;
+
 			ItemStack fishStack = new ItemStack(Item.getByNameOrId(fishData.itemId), 1, fishData.itemMetaData);
 			fishStackList.add(fishStack);
 		}

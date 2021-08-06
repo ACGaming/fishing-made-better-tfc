@@ -36,6 +36,8 @@ import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent.PlayerTickEvent;
+
+import net.dries007.tfc.objects.fluids.FluidsTFC;
 import net.theawesomegem.fishingmadebetter.BetterFishUtil;
 import net.theawesomegem.fishingmadebetter.common.capability.fishing.FishPopulation;
 import net.theawesomegem.fishingmadebetter.common.capability.fishing.FishingCapabilityProvider;
@@ -644,18 +646,27 @@ public class FishingEventHandler {//God this handler is a mess
         World world = player.world;
         EntityFishHook hook = player.fishEntity;
         
-        FishingLiquid liquid = FishingLiquid.WATER;
+        FishingLiquid liquid = FishingLiquid.SALT_WATER;
         if(hook instanceof EntityFMBLavaFishHook) liquid = FishingLiquid.LAVA;
         else if(hook instanceof EntityFMBVoidFishHook) liquid = FishingLiquid.VOID;
         
-        if(liquid == FishingLiquid.WATER) {
+        if(liquid == FishingLiquid.FRESH_WATER) {
         	int waterCount = 0;
         	for(BlockPos pos : BlockPos.getAllInBox((int)hook.posX-2, (int)hook.posY-3, (int)hook.posZ-2, (int)hook.posX+2, (int)hook.posY, (int)hook.posZ+2)) {
         		Material mat = world.getBlockState(pos).getMaterial();
-        		if(mat == MaterialLiquid.WATER) waterCount++;
+        		if(mat == FluidsTFC.FRESH_WATER.get().getBlock().getBlockState().getBaseState().getMaterial()) waterCount++;
         		if(waterCount >= 25) break;
         	}
         	if(waterCount < 25) return null;//Not enough water
+        }
+        if(liquid == FishingLiquid.SALT_WATER) {
+            int waterCount = 0;
+            for(BlockPos pos : BlockPos.getAllInBox((int)hook.posX-2, (int)hook.posY-3, (int)hook.posZ-2, (int)hook.posX+2, (int)hook.posY, (int)hook.posZ+2)) {
+                Material mat = world.getBlockState(pos).getMaterial();
+                if(mat == FluidsTFC.SALT_WATER.get().getBlock().getBlockState().getBaseState().getMaterial()) waterCount++;
+                if(waterCount >= 25) break;
+            }
+            if(waterCount < 25) return null;//Not enough water
         }
         if(liquid == FishingLiquid.LAVA) {//TODO: different sizes required depending on liquid
         	int lavaCount = 0;

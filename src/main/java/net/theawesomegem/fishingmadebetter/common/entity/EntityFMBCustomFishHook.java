@@ -28,6 +28,8 @@ import net.minecraft.world.WorldServer;
 import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import net.dries007.tfc.objects.fluids.FluidsTFC;
 import net.theawesomegem.fishingmadebetter.common.item.fishingrod.ItemBetterFishingRod;
 
 public class EntityFMBCustomFishHook extends EntityFishHook {
@@ -72,7 +74,7 @@ public class EntityFMBCustomFishHook extends EntityFishHook {
     public float getLiquidHeight(World worldIn, BlockPos blockpos) {
     	IBlockState iblockstate = worldIn.getBlockState(blockpos);
     	
-    	if(iblockstate.getMaterial() == MaterialLiquid.WATER) {
+    	if(iblockstate.getMaterial() == FluidsTFC.FRESH_WATER.get().getBlock().getBlockState().getBaseState().getMaterial() || iblockstate.getMaterial() == FluidsTFC.SALT_WATER.get().getBlock().getBlockState().getBaseState().getMaterial()) {
     		return BlockLiquid.getBlockLiquidHeight(iblockstate, worldIn, blockpos);
     	}
     	return 0.0f;
