@@ -13,7 +13,7 @@ apply plugin: 'net.minecraftforge.gradle.forge'
 
 version = "2.0.2"
 group = "net.theawesomegem.fishingmadebetter" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "FishingMadeBetter-1.12.2"
+archivesBaseName = "FishingMadeBetterTFC-1.12.2"
 
 sourceCompatibility = targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
 compileJava {

@@ -66,7 +66,7 @@ public class ItemFishBucket extends Item {
         
         IBlockState blockState = worldIn.getBlockState(blockpos);
         Material material = blockState.getMaterial();
-        if(material != FluidsTFC.FRESH_WATER.get().getBlock().getBlockState().getBaseState().getMaterial() || material != FluidsTFC.SALT_WATER.get().getBlock().getBlockState().getBaseState().getMaterial()) {
+        if(material != Material.WATER) {
         	playerIn.sendMessage(new TextComponentString("This fish can only be placed in water."));
         	return new ActionResult<>(EnumActionResult.FAIL, itemstack);
         }
@@ -74,7 +74,7 @@ public class ItemFishBucket extends Item {
         int waterCount = 0;
     	for(BlockPos pos : BlockPos.getAllInBox(blockpos.getX()-2, blockpos.getY()-3, blockpos.getZ()-2, blockpos.getX()+2, blockpos.getY(), blockpos.getZ()+2)) {
     		Material mat = worldIn.getBlockState(pos).getMaterial();
-    		if(mat == FluidsTFC.FRESH_WATER.get().getBlock().getBlockState().getBaseState().getMaterial() || mat == FluidsTFC.SALT_WATER.get().getBlock().getBlockState().getBaseState().getMaterial()) waterCount++;
+    		if(mat == Material.WATER) waterCount++;
     		if(waterCount >= 25) break;
     	}
     	if(waterCount < 25) {

@@ -655,6 +655,7 @@ public class FishingEventHandler {//God this handler is a mess
         	for(BlockPos pos : BlockPos.getAllInBox((int)hook.posX-2, (int)hook.posY-3, (int)hook.posZ-2, (int)hook.posX+2, (int)hook.posY, (int)hook.posZ+2)) {
         		Material mat = world.getBlockState(pos).getMaterial();
         		if(mat == FluidsTFC.FRESH_WATER.get().getBlock().getBlockState().getBaseState().getMaterial()) waterCount++;
+                player.sendMessage(new TextComponentString("Fresh Water Count: " + waterCount));
         		if(waterCount >= 25) break;
         	}
         	if(waterCount < 25) return null;//Not enough water
@@ -664,6 +665,7 @@ public class FishingEventHandler {//God this handler is a mess
             for(BlockPos pos : BlockPos.getAllInBox((int)hook.posX-2, (int)hook.posY-3, (int)hook.posZ-2, (int)hook.posX+2, (int)hook.posY, (int)hook.posZ+2)) {
                 Material mat = world.getBlockState(pos).getMaterial();
                 if(mat == FluidsTFC.SALT_WATER.get().getBlock().getBlockState().getBaseState().getMaterial()) waterCount++;
+                player.sendMessage(new TextComponentString("Salt Water Count: " + waterCount));
                 if(waterCount >= 25) break;
             }
             if(waterCount < 25) return null;//Not enough water
@@ -673,6 +675,7 @@ public class FishingEventHandler {//God this handler is a mess
         	for(BlockPos pos : BlockPos.getAllInBox((int)hook.posX-2, (int)hook.posY-3, (int)hook.posZ-2, (int)hook.posX+2, (int)hook.posY, (int)hook.posZ+2)) {
         		Material mat = world.getBlockState(pos).getMaterial();
         		if(mat == MaterialLiquid.LAVA) lavaCount++;
+                player.sendMessage(new TextComponentString("Lava Count: " + lavaCount));
         		if(lavaCount >= 25) break;
         	}
         	if(lavaCount < 25) return null;//Not enough lava

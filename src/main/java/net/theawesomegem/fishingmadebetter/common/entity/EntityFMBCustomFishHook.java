@@ -4,6 +4,7 @@ import java.lang.reflect.Field;
 import java.util.List;
 
 import net.minecraft.block.BlockLiquid;
+import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
@@ -69,7 +70,7 @@ public class EntityFMBCustomFishHook extends EntityFishHook {
     public float getLiquidHeight(World worldIn, BlockPos blockpos) {
     	IBlockState iblockstate = worldIn.getBlockState(blockpos);
     	
-    	if(iblockstate.getMaterial() == FluidsTFC.FRESH_WATER.get().getBlock().getBlockState().getBaseState().getMaterial() || iblockstate.getMaterial() == FluidsTFC.SALT_WATER.get().getBlock().getBlockState().getBaseState().getMaterial()) {
+    	if(iblockstate.getMaterial() == Material.WATER) {
     		return BlockLiquid.getBlockLiquidHeight(iblockstate, worldIn, blockpos);
     	}
     	return 0.0f;

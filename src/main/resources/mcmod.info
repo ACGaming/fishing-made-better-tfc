@@ -1,13 +1,13 @@
 [
 {
   "modid": "fishingmadebetter",
-  "name": "Fishing Made Better",
+  "name": "Fishing Made Better for TFC",
   "description": "Fishing is now more better-er.",
   "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "",
   "updateUrl": "",
-  "authorList": ["TheAwesomeGem", "Fonnymunkey"],
+  "authorList": ["TheAwesomeGem", "Fonnymunkey", "ACGaming"],
   "credits": "Forge Team.",
   "logoFile": "logo.png",
   "screenshots": [],
