@@ -42,7 +42,7 @@ public class DefaultFishes {//TODO: all this shit
                 1,//minWeight
                 2,//maxWeight
                 FishData.TimeToFish.ANY,//Time of day for fish
-                FishData.FishingLiquid.SALT_WATER,//Liquid to fish in
+                FishData.FishingLiquid.FRESH_WATER,//Liquid to fish in
                 false,//Rain required
                 false,//Thunder required
                 50,//Fish rarity
@@ -83,7 +83,7 @@ public class DefaultFishes {//TODO: all this shit
                 1,//minWeight
                 2,//maxWeight
                 FishData.TimeToFish.ANY,//Time of day for fish
-                FishData.FishingLiquid.SALT_WATER,//Liquid to fish in
+                FishData.FishingLiquid.FRESH_WATER,//Liquid to fish in
                 false,//Rain required
                 false,//Thunder required
                 40,//Fish rarity
@@ -124,7 +124,7 @@ public class DefaultFishes {//TODO: all this shit
                 10,//minWeight
                 40,//maxWeight
                 FishData.TimeToFish.ANY,//Time of day for fish
-                FishData.FishingLiquid.SALT_WATER,//Liquid to fish in
+                FishData.FishingLiquid.FRESH_WATER,//Liquid to fish in
                 false,//Rain required
                 false,//Thunder required
                 10,//Fish rarity
@@ -165,7 +165,7 @@ public class DefaultFishes {//TODO: all this shit
                 5,//minWeight
                 10,//maxWeight
                 FishData.TimeToFish.ANY,//Time of day for fish
-                FishData.FishingLiquid.SALT_WATER,//Liquid to fish in
+                FishData.FishingLiquid.FRESH_WATER,//Liquid to fish in
                 false,//Rain required
                 false,//Thunder required
                 20,//Fish rarity
@@ -206,7 +206,7 @@ public class DefaultFishes {//TODO: all this shit
                 10,//minWeight
                 40,//maxWeight
                 FishData.TimeToFish.ANY,//Time of day for fish
-                FishData.FishingLiquid.SALT_WATER,//Liquid to fish in
+                FishData.FishingLiquid.FRESH_WATER,//Liquid to fish in
                 false,//Rain required
                 false,//Thunder required
                 6,//Fish rarity
@@ -247,7 +247,7 @@ public class DefaultFishes {//TODO: all this shit
                 10,//minWeight
                 20,//maxWeight
                 FishData.TimeToFish.ANY,//Time of day for fish
-                FishData.FishingLiquid.SALT_WATER,//Liquid to fish in
+                FishData.FishingLiquid.FRESH_WATER,//Liquid to fish in
                 false,//Rain required
                 false,//Thunder required
                 12,//Fish rarity
@@ -288,7 +288,7 @@ public class DefaultFishes {//TODO: all this shit
                 20,//minWeight
                 50,//maxWeight
                 FishData.TimeToFish.NIGHT,//Time of day for fish
-                FishData.FishingLiquid.SALT_WATER,//Liquid to fish in
+                FishData.FishingLiquid.FRESH_WATER,//Liquid to fish in
                 false,//Rain required
                 false,//Thunder required
                 4,//Fish rarity
@@ -329,7 +329,7 @@ public class DefaultFishes {//TODO: all this shit
                 30,//minWeight
                 50,//maxWeight
                 FishData.TimeToFish.ANY,//Time of day for fish
-                FishData.FishingLiquid.SALT_WATER,//Liquid to fish in
+                FishData.FishingLiquid.FRESH_WATER,//Liquid to fish in
                 false,//Rain required
                 false,//Thunder required
                 2,//Fish rarity
@@ -1696,7 +1696,7 @@ public class DefaultFishes {//TODO: all this shit
 
         fishDataMap.put("Cod", FishData.createData(
         		"Cod",
-                "minecraft:fish",
+                "tfc:food/fish",
                 0,
                 "a large grey-green stout bodied fish with a large head and long chin barbel",
                 1600,

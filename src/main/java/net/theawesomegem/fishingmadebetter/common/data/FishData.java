@@ -2,10 +2,7 @@ package net.theawesomegem.fishingmadebetter.common.data;
 
 import com.google.gson.annotations.SerializedName;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class FishData {
     public enum TimeToFish {
@@ -34,35 +31,90 @@ public class FishData {
         @SerializedName("herbivoreAQC") HERBIVORE_AQC;
 
         Map<String, Integer[]> fruit = new HashMap<String, Integer[]>(){{
-            put("minecraft:apple", new Integer[] {0});
-            put("minecraft:melon", new Integer[] {0});
+            put("firmalife:melon", new Integer[] {0});
+            put("tfc:food/banana", new Integer[] {0});
+            put("tfc:food/blackberry", new Integer[] {0});
+            put("tfc:food/blueberry", new Integer[] {0});
+            put("tfc:food/bunch_berry", new Integer[] {0});
+            put("tfc:food/cherry", new Integer[] {0});
+            put("tfc:food/cloud_berry", new Integer[] {0});
+            put("tfc:food/cranberry", new Integer[] {0});
+            put("tfc:food/elderberry", new Integer[] {0});
+            put("tfc:food/gooseberry", new Integer[] {0});
+            put("tfc:food/green_apple", new Integer[] {0});
+            put("tfc:food/lemon", new Integer[] {0});
+            put("tfc:food/orange", new Integer[] {0});
+            put("tfc:food/peach", new Integer[] {0});
+            put("tfc:food/plum", new Integer[] {0});
+            put("tfc:food/raspberry", new Integer[] {0});
+            put("tfc:food/red_apple", new Integer[] {0});
+            put("tfc:food/snow_berry", new Integer[] {0});
+            put("tfc:food/strawberry", new Integer[] {0});
+            put("tfc:food/wintergreen_berry", new Integer[] {0});
         }};
 
         Map<String, Integer[]> grain = new HashMap<String, Integer[]>(){{
-            put("minecraft:wheat_seeds", new Integer[] {0});
-            put("minecraft:pumpkin_seeds", new Integer[] {0});
-            put("minecraft:melon_seeds", new Integer[] {0});
-            put("minecraft:beetroot_seeds", new Integer[] {0});
+            put("firmalife:crop/seeds/melon", new Integer[] {0});
+            put("firmalife:crop/seeds/pumpkin", new Integer[] {0});
+            put("tfc:crop/seeds/barley", new Integer[] {0});
+            put("tfc:crop/seeds/beet", new Integer[] {0});
+            put("tfc:crop/seeds/cabbage", new Integer[] {0});
+            put("tfc:crop/seeds/carrot", new Integer[] {0});
+            put("tfc:crop/seeds/garlic", new Integer[] {0});
+            put("tfc:crop/seeds/green_bean", new Integer[] {0});
+            put("tfc:crop/seeds/jute", new Integer[] {0});
+            put("tfc:crop/seeds/maize", new Integer[] {0});
+            put("tfc:crop/seeds/oat", new Integer[] {0});
+            put("tfc:crop/seeds/onion", new Integer[] {0});
+            put("tfc:crop/seeds/potato", new Integer[] {0});
+            put("tfc:crop/seeds/red_bell_pepper", new Integer[] {0});
+            put("tfc:crop/seeds/rice", new Integer[] {0});
+            put("tfc:crop/seeds/rye", new Integer[] {0});
+            put("tfc:crop/seeds/soybean", new Integer[] {0});
+            put("tfc:crop/seeds/squash", new Integer[] {0});
+            put("tfc:crop/seeds/sugarcane", new Integer[] {0});
+            put("tfc:crop/seeds/tomato", new Integer[] {0});
+            put("tfc:crop/seeds/wheat", new Integer[] {0});
+            put("tfc:crop/seeds/yellow_bell_pepper", new Integer[] {0});
         }};
 
         Map<String, Integer[]> vegetable = new HashMap<String, Integer[]>(){{
-            put("minecraft:carrot", new Integer[] {0});
-            put("minecraft:potato", new Integer[] {0});
-            put("minecraft:beetroot", new Integer[] {0});
+            put("tfc:food/beet", new Integer[] {0});
+            put("tfc:food/cabbage", new Integer[] {0});
+            put("tfc:food/carrot", new Integer[] {0});
+            put("tfc:food/garlic", new Integer[] {0});
+            put("tfc:food/green_bean", new Integer[] {0});
+            put("tfc:food/green_bell_pepper", new Integer[] {0});
+            put("tfc:food/maize", new Integer[] {0});
+            put("tfc:food/onion", new Integer[] {0});
+            put("tfc:food/red_bell_pepper", new Integer[] {0});
+            put("tfc:food/soybean", new Integer[] {0});
+            put("tfc:food/squash", new Integer[] {0});
+            put("tfc:food/tomato", new Integer[] {0});
+            put("tfc:food/yellow_bell_pepper", new Integer[] {0});
         }};
 
         Map<String, Integer[]> meatNormal = new HashMap<String, Integer[]>(){{
-            put("minecraft:fish", new Integer[] {2});
-            put("minecraft:spider_eye", new Integer[] {0});
             put("minecraft:rotten_flesh", new Integer[] {0});
+            put("minecraft:spider_eye", new Integer[] {0});
+            put("tfc:food/fish", new Integer[] {2});
         }};
 
         Map<String, Integer[]> meatExtra = new HashMap<String, Integer[]>(){{
-            put("minecraft:porkchop", new Integer[] {0});
-            put("minecraft:beef", new Integer[] {0});
-            put("minecraft:chicken", new Integer[] {0});
-            put("minecraft:rabbit", new Integer[] {0});
-            put("minecraft:mutton", new Integer[] {0});
+            put("tfc:food/bear", new Integer[] {0});
+            put("tfc:food/beef", new Integer[] {0});
+            put("tfc:food/calamari", new Integer[] {0});
+            put("tfc:food/camelidae", new Integer[] {0});
+            put("tfc:food/chicken", new Integer[] {0});
+            put("tfc:food/gran_feline", new Integer[] {0});
+            put("tfc:food/horse_meat", new Integer[] {0});
+            put("tfc:food/mongoose", new Integer[] {0});
+            put("tfc:food/mutton", new Integer[] {0});
+            put("tfc:food/pheasant", new Integer[] {0});
+            put("tfc:food/pork", new Integer[] {0});
+            put("tfc:food/rabbit", new Integer[] {0});
+            put("tfc:food/venison", new Integer[] {0});
+            put("tfc:food/wolf", new Integer[] {0});
         }};
 
         Map<String, Integer[]> small_predator_aqc = new HashMap<String, Integer[]>(){{
@@ -202,7 +254,7 @@ public class FishData {
         fishData.biomeBlacklist = biomeBlacklist;
         fishData.dimensionBlacklist = dimensionBlacklist;
         fishData.biomeTagList = new ArrayList<>();
-        for (String tag : biomeTagList) fishData.biomeTagList.add(tag);
+        fishData.biomeTagList.addAll(Arrays.asList(biomeTagList));
         fishData.dimensionList = new ArrayList<>();
         for (int dim : dimensionList) fishData.dimensionList.add(dim);
         fishData.timeOutsideOfWater = timeOutsideOfWater;
