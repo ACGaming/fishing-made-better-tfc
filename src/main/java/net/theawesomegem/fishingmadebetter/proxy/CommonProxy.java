@@ -174,7 +174,7 @@ public class CommonProxy {
         	modRegistry.remove(new ResourceLocation("aquaculture:brown_mushroom_from_fish"));
         	modRegistry.remove(new ResourceLocation("aquaculture:gold_nugget_from_gold_fish"));
         	int aqcRemoved = 9;
-        	ArrayList<IRecipe> recipeRemoveQueue = new ArrayList<IRecipe>();
+        	ArrayList<IRecipe> recipeRemoveQueue = new ArrayList<>();
         	for(IRecipe recipe : modRegistry.getValuesCollection()) {
         		if(recipe.getRecipeOutput().getItem() == Item.getByNameOrId("aquaculture:food")) {
         			recipeRemoveQueue.add(recipe);

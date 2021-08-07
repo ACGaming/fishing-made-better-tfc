@@ -21,7 +21,7 @@ public class FishSlicingRecipeWrapper implements ICraftingRecipeWrapper {
 		ItemStack knifeIron = new ItemStack(ItemManager.FILLET_KNIFE_IRON);
 		ItemStack knifeDiamond = new ItemStack(ItemManager.FILLET_KNIFE_DIAMOND);
 		
-		List<ItemStack> fishStackList = new ArrayList<ItemStack>();
+		List<ItemStack> fishStackList = new ArrayList<>();
 		
 		ItemStack sliceStack = new ItemStack(ItemManager.FISH_SLICE_RAW);
 		

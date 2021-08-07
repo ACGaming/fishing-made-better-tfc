@@ -55,5 +55,4 @@ public class BlockManager {
     private void registerItemBlockModels(Item item) {
     	ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(item.getRegistryName(), "normal"));
     }
-    
 }

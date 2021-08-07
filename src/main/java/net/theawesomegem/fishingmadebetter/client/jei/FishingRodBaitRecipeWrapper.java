@@ -18,26 +18,24 @@ public class FishingRodBaitRecipeWrapper implements ICraftingRecipeWrapper {
 
 	public FishingRodBaitRecipeWrapper(Item rod) {
 		ItemStack rodStack = new ItemStack(rod);
-		
-		ArrayList<ItemStack> baitList = new ArrayList<ItemStack>();
-		
-		baitList.addAll(Arrays.asList(
+
+		ArrayList<ItemStack> baitList = new ArrayList<>(Arrays.asList(
 			new ItemStack(Items.APPLE),
 			new ItemStack(Items.MELON),
-			
+
 			new ItemStack(Items.WHEAT_SEEDS),
 			new ItemStack(Items.PUMPKIN_SEEDS),
 			new ItemStack(Items.MELON_SEEDS),
 			new ItemStack(Items.BEETROOT_SEEDS),
-			
+
 			new ItemStack(Items.CARROT),
 			new ItemStack(Items.POTATO),
 			new ItemStack(Items.BEETROOT),
-			
+
 			new ItemStack(Items.FISH, 1, 2),
 			new ItemStack(Items.SPIDER_EYE),
 			new ItemStack(Items.ROTTEN_FLESH),
-			
+
 			new ItemStack(Items.PORKCHOP),
 			new ItemStack(Items.BEEF),
 			new ItemStack(Items.CHICKEN),

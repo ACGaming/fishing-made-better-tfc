@@ -1,7 +1,10 @@
 package net.theawesomegem.fishingmadebetter.common.item;
 
+import java.util.List;
+import java.util.Map;
+import javax.annotation.Nullable;
+
 import net.minecraft.block.material.Material;
-import net.minecraft.block.material.MaterialLiquid;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.util.ITooltipFlag;
@@ -33,11 +36,6 @@ import net.theawesomegem.fishingmadebetter.common.capability.world.PopulationDat
 import net.theawesomegem.fishingmadebetter.common.configuration.CustomConfigurationHandler;
 import net.theawesomegem.fishingmadebetter.common.data.FishData;
 import net.theawesomegem.fishingmadebetter.common.registry.FMBCreativeTab;
-
-import java.util.List;
-import java.util.Map;
-
-import javax.annotation.Nullable;
 
 public class ItemFishBucket extends Item {
 

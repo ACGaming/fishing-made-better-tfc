@@ -19,5 +19,4 @@ public class JeiPlugin implements IModPlugin {
 		
 		if(ConfigurationManager.server.enableFishBucket) registry.addRecipes(FishBucketRecipeMaker.getFishBucketRecipes(), VanillaRecipeCategoryUid.CRAFTING);
 	}
-	
 }

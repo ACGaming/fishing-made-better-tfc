@@ -13,5 +13,4 @@ public class RenderLavaHookFactory implements IRenderFactory<EntityFishHook> {
     public Render<? super EntityFishHook> createRenderFor(RenderManager manager) {
         return new RenderLavaHook(manager);
     }
-
 }

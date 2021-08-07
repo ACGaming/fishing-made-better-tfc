@@ -36,7 +36,7 @@ public class BetterFishUtil {
     }
 
     public static boolean doesFishHasScale(ItemStack itemStack) {
-        return (!itemStack.hasTagCompound() || !itemStack.getTagCompound().hasKey("FishScale")) ? false : itemStack.getTagCompound().getBoolean("FishScale");
+        return itemStack.hasTagCompound() && itemStack.getTagCompound().hasKey("FishScale") && itemStack.getTagCompound().getBoolean("FishScale");
     }
 
     public static void setFishHasScale(ItemStack itemStack, boolean value) {

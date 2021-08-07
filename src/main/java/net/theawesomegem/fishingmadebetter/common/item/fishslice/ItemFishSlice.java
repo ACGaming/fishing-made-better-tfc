@@ -14,13 +14,16 @@ import net.minecraft.world.World;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import net.dries007.tfc.api.capability.food.IItemFoodTFC;
+import net.dries007.tfc.api.capability.size.IItemSize;
 import net.theawesomegem.fishingmadebetter.ModInfo;
 import net.theawesomegem.fishingmadebetter.common.registry.FMBCreativeTab;
 
 /**
  * Created by TheAwesomeGem on 1/1/2018.
  */
-public abstract class ItemFishSlice extends ItemFood {//TODO: maybe something with healing/saturation/texture per fish type
+public abstract class ItemFishSlice extends ItemFood implements IItemSize, IItemFoodTFC {//TODO: maybe something with healing/saturation/texture per fish type
     public ItemFishSlice(String name, int healAmount, float saturation) {
         super(healAmount, saturation, false);
 
@@ -70,4 +73,3 @@ public abstract class ItemFishSlice extends ItemFood {//TODO: maybe something wi
         return itemStack.getTagCompound().getString("FishItemId");
     }
 }
-

@@ -21,7 +21,7 @@ import java.util.Random;
  */
 public class ChunkFishingData implements IChunkFishingData {
     private final Map<String, PopulationData> fishPopulationMap;
-    private final Map<String, Type> byName = new HashMap<String, Type>();
+    private final Map<String, Type> byName = new HashMap<>();
 
     private Chunk chunk;
     private World world;
@@ -224,14 +224,14 @@ public class ChunkFishingData implements IChunkFishingData {
 
         for(String biomeTag : biomeTagList) {//No need to check every single block, just check chunk corners and middle side
         	if(byName.get(biomeTag) != null && (
-        			(biomeIds[0] >= 0 ? BiomeDictionary.hasType(Biome.getBiome(biomeIds[0]), byName.get(biomeTag)) : false) ||//Why was biome array randomly returning id -123 sometimes?
-        			(biomeIds[9] >= 0 ? BiomeDictionary.hasType(Biome.getBiome(biomeIds[9]), byName.get(biomeTag)) : false) ||
-        			(biomeIds[15] >= 0 ? BiomeDictionary.hasType(Biome.getBiome(biomeIds[15]), byName.get(biomeTag)) : false) ||
-        			(biomeIds[112] >= 0 ? BiomeDictionary.hasType(Biome.getBiome(biomeIds[112]), byName.get(biomeTag)): false) ||
-        			(biomeIds[127] >= 0 ? BiomeDictionary.hasType(Biome.getBiome(biomeIds[127]), byName.get(biomeTag)) : false) ||
-        			(biomeIds[240] >= 0 ? BiomeDictionary.hasType(Biome.getBiome(biomeIds[240]), byName.get(biomeTag)) : false) ||
-        			(biomeIds[249] >= 0 ? BiomeDictionary.hasType(Biome.getBiome(biomeIds[249]), byName.get(biomeTag)) : false) ||
-        			(biomeIds[255] >= 0 ? BiomeDictionary.hasType(Biome.getBiome(biomeIds[255]), byName.get(biomeTag)) : false) )
+        			(biomeIds[0] >= 0 && BiomeDictionary.hasType(Biome.getBiome(biomeIds[0]), byName.get(biomeTag))) ||//Why was biome array randomly returning id -123 sometimes?
+        			(biomeIds[9] >= 0 && BiomeDictionary.hasType(Biome.getBiome(biomeIds[9]), byName.get(biomeTag))) ||
+        			(biomeIds[15] >= 0 && BiomeDictionary.hasType(Biome.getBiome(biomeIds[15]), byName.get(biomeTag))) ||
+        			(biomeIds[112] >= 0 && BiomeDictionary.hasType(Biome.getBiome(biomeIds[112]), byName.get(biomeTag))) ||
+        			(biomeIds[127] >= 0 && BiomeDictionary.hasType(Biome.getBiome(biomeIds[127]), byName.get(biomeTag))) ||
+        			(biomeIds[240] >= 0 && BiomeDictionary.hasType(Biome.getBiome(biomeIds[240]), byName.get(biomeTag))) ||
+        			(biomeIds[249] >= 0 && BiomeDictionary.hasType(Biome.getBiome(biomeIds[249]), byName.get(biomeTag))) ||
+        			(biomeIds[255] >= 0 && BiomeDictionary.hasType(Biome.getBiome(biomeIds[255]), byName.get(biomeTag))) )
         	) return true;
         }
         
@@ -241,9 +241,7 @@ public class ChunkFishingData implements IChunkFishingData {
     private boolean isChunkInDimension(List<Integer> dimensionList) {
     	if(chunk == null) return false;
     	if(dimensionList.isEmpty()) return false;
-    	if(dimensionList.contains(chunk.getWorld().provider.getDimension())) return true;
-    	
-    	return false;
+        return dimensionList.contains(chunk.getWorld().provider.getDimension());
     }
     
     private void initByName() {
@@ -252,4 +250,3 @@ public class ChunkFishingData implements IChunkFishingData {
     	}
     }
 }
-    

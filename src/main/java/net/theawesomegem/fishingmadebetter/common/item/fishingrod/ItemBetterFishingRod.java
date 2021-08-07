@@ -141,13 +141,13 @@ public abstract class ItemBetterFishingRod extends ItemFishingRod {
             }
             
             playerIn.swingArm(handIn);
-            worldIn.playSound((EntityPlayer)null, playerIn.posX, playerIn.posY, playerIn.posZ, SoundEvents.ENTITY_BOBBER_RETRIEVE, SoundCategory.NEUTRAL, 1.0F, 0.4F / (itemRand.nextFloat() * 0.4F + 0.8F));
+            worldIn.playSound(null, playerIn.posX, playerIn.posY, playerIn.posZ, SoundEvents.ENTITY_BOBBER_RETRIEVE, SoundCategory.NEUTRAL, 1.0F, 0.4F / (itemRand.nextFloat() * 0.4F + 0.8F));
         }
         else if(playerIn.getHeldItem(EnumHand.MAIN_HAND) != null && playerIn.getHeldItem(EnumHand.OFF_HAND) != null && playerIn.getHeldItem(EnumHand.MAIN_HAND).getItem() instanceof ItemFishingRod && playerIn.getHeldItem(EnumHand.OFF_HAND).getItem() instanceof ItemFishingRod) {
-        	return new ActionResult<ItemStack>(EnumActionResult.FAIL, itemstack);
+        	return new ActionResult<>(EnumActionResult.FAIL, itemstack);
         }
         else {
-            worldIn.playSound((EntityPlayer)null, playerIn.posX, playerIn.posY, playerIn.posZ, SoundEvents.ENTITY_BOBBER_THROW, SoundCategory.NEUTRAL, 0.5F, 0.4F / (itemRand.nextFloat() * 0.4F + 0.8F));
+            worldIn.playSound(null, playerIn.posX, playerIn.posY, playerIn.posZ, SoundEvents.ENTITY_BOBBER_THROW, SoundCategory.NEUTRAL, 0.5F, 0.4F / (itemRand.nextFloat() * 0.4F + 0.8F));
 
             if(!worldIn.isRemote) {
             	if(getBobberItem(itemstack).isLavaBobber()) {
@@ -189,7 +189,7 @@ public abstract class ItemBetterFishingRod extends ItemFishingRod {
             playerIn.addStat(StatList.getObjectUseStats(this));
         }
 
-        return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, itemstack);
+        return new ActionResult<>(EnumActionResult.SUCCESS, itemstack);
     }
 
     @SuppressWarnings("deprecation")

@@ -37,7 +37,6 @@ public class GuiReelingOverlay extends Gui {
     private final int outlineBarWidth = backgroundBarWidth + 6;
     private final int outlineBarHeight = backgroundBarHeight + 6;
 
-    private int fontColor = 0xFFFFFF;
     private FontRenderer fontRenderer;
 
     public GuiReelingOverlay(Minecraft minecraft) {
@@ -61,8 +60,8 @@ public class GuiReelingOverlay extends Gui {
         int scaledHeight = e.getResolution().getScaledHeight();
 
         double distance = (double)(fishingData.getFishDeepLevel() - fishingData.getFishDistance())/10;
-        
-        fontColor = getIntFromColor(fishingData.getLineBreak());
+
+        int fontColor = getIntFromColor(fishingData.getLineBreak());
         fontRenderer.drawStringWithShadow(String.format("Distance: %sm", distance), getBarPosX(scaledWidth) + (outlineBarWidth * 0.5f) - 30, getBarPosY(scaledHeight) + outlineBarHeight + 2, fontColor);
         
         int posX = getBarPosX(scaledWidth);
@@ -100,12 +99,11 @@ public class GuiReelingOverlay extends Gui {
                 renderBackgroundBar(posX, posY, 0, 2);
             }
             else {
-            	if(minigameBackground[3] == 0) {
-            		mc.renderEngine.bindTexture(textureUnderOverlay);
+                mc.renderEngine.bindTexture(textureUnderOverlay);
+                if(minigameBackground[3] == 0) {
                     renderBackgroundBar(posX, posY, 1, minigameBackground[4]);//Liquid, offset for biome
             	}
             	else {
-                	mc.renderEngine.bindTexture(textureUnderOverlay);
                     renderBackgroundBar(posX, posY, 0, minigameBackground[3]);//Liquid, offset for biome
             	}
                 

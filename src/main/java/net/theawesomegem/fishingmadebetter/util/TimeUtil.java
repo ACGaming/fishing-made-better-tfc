@@ -6,6 +6,6 @@ public class TimeUtil {
     }
 
     public static long secondsToMinecraftTicks(int seconds) {
-        return seconds * 20;
+        return seconds * 20L;
     }
 }

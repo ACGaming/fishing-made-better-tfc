@@ -4,7 +4,6 @@ import java.lang.reflect.Field;
 import java.util.List;
 
 import net.minecraft.block.BlockLiquid;
-import net.minecraft.block.material.MaterialLiquid;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
@@ -18,11 +17,7 @@ import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.SoundEvent;
-import net.minecraft.util.math.AxisAlignedBB;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.math.RayTraceResult;
-import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.math.*;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
 import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
@@ -33,18 +28,18 @@ import net.dries007.tfc.objects.fluids.FluidsTFC;
 import net.theawesomegem.fishingmadebetter.common.item.fishingrod.ItemBetterFishingRod;
 
 public class EntityFMBCustomFishHook extends EntityFishHook {
-	static enum State
+	enum State
     {
         FLYING,
         HOOKED_IN_ENTITY,
-        BOBBING;
+        BOBBING
     }
 	
 	private int ticksInGround;
 	private int ticksInAir;
 	private float fishApproachingAngle;
 	private int lureSpeed;
-	private static final DataParameter<Integer> DATA_HOOKED_ENTITY = EntityDataManager.<Integer>createKey(EntityFishHook.class, DataSerializers.VARINT);
+	private static final DataParameter<Integer> DATA_HOOKED_ENTITY = EntityDataManager.createKey(EntityFishHook.class, DataSerializers.VARINT);
 	
 	final static Field currentStateField = ObfuscationReflectionHelper.findField(EntityFishHook.class, "field_190627_av");//
     final static Field inGroundField = ObfuscationReflectionHelper.findField(EntityFishHook.class, "field_146051_au");
@@ -107,7 +102,7 @@ public class EntityFMBCustomFishHook extends EntityFishHook {
     @Override
     protected void entityInit()
     {
-        this.getDataManager().register(DATA_HOOKED_ENTITY, Integer.valueOf(0));
+        this.getDataManager().register(DATA_HOOKED_ENTITY, 0);
     }
 
     @Override
@@ -115,7 +110,7 @@ public class EntityFMBCustomFishHook extends EntityFishHook {
     {
         if (DATA_HOOKED_ENTITY.equals(key))
         {
-            int i = ((Integer)this.getDataManager().get(DATA_HOOKED_ENTITY)).intValue();
+            int i = this.getDataManager().get(DATA_HOOKED_ENTITY);
             this.caughtEntity = i > 0 ? this.world.getEntityByID(i - 1) : null;
         }
 
@@ -177,7 +172,7 @@ public class EntityFMBCustomFishHook extends EntityFishHook {
                         }
                         else {
                             this.posX = this.caughtEntity.posX;
-                            double d2 = (double)this.caughtEntity.height;
+                            double d2 = this.caughtEntity.height;
                             this.posY = this.caughtEntity.getEntityBoundingBox().minY + d2 * 0.8D;
                             this.posZ = this.caughtEntity.posZ;
                             this.setPosition(this.posX, this.posY, this.posZ);
@@ -238,25 +233,25 @@ public class EntityFMBCustomFishHook extends EntityFishHook {
                 float f1 = MathHelper.sin(f);
                 float f2 = MathHelper.cos(f);
                 double d0 = this.posX + (double)(f1 * (float)getTicksCatchableDelay(this) * 0.1F);
-                double d1 = (double)((float)MathHelper.floor(this.getEntityBoundingBox().minY) + 1.0F);
+                double d1 = (float)MathHelper.floor(this.getEntityBoundingBox().minY) + 1.0F;
                 double d2 = this.posZ + (double)(f2 * (float)getTicksCatchableDelay(this) * 0.1F);
                 
                 BlockPos newPos = new BlockPos(d0, d1 - 1.0D, d2);
                 if(getLiquidHeight(worldserver, newPos) != 0) {
-                    if(this.rand.nextFloat() < 0.15F) worldserver.spawnParticle(getBubbleParticle(), d0, d1 - 0.10000000149011612D, d2, 1, (double)f1, 0.1D, (double)f2, 0.0D);
+                    if(this.rand.nextFloat() < 0.15F) worldserver.spawnParticle(getBubbleParticle(), d0, d1 - 0.10000000149011612D, d2, 1, f1, 0.1D, f2, 0.0D);
 
                     float f3 = f1 * 0.04F;
                     float f4 = f2 * 0.04F;
-                    worldserver.spawnParticle(getWakeParticle(), d0, d1, d2, 0, (double)f4, 0.01D, (double)(-f3), 1.0D);
-                    worldserver.spawnParticle(getWakeParticle(), d0, d1, d2, 0, (double)(-f4), 0.01D, (double)f3, 1.0D);
+                    worldserver.spawnParticle(getWakeParticle(), d0, d1, d2, 0, f4, 0.01D, -f3, 1.0D);
+                    worldserver.spawnParticle(getWakeParticle(), d0, d1, d2, 0, -f4, 0.01D, f3, 1.0D);
                 }
             }
             else {
-                this.motionY = (double)(-0.4F * MathHelper.nextFloat(this.rand, 0.6F, 1.0F));
+                this.motionY = -0.4F * MathHelper.nextFloat(this.rand, 0.6F, 1.0F);
                 this.playSound(getSoundEvent(), 0.25F, 1.0F + (this.rand.nextFloat() - this.rand.nextFloat()) * 0.4F);
                 double d3 = this.getEntityBoundingBox().minY + 0.5D;
-                worldserver.spawnParticle(getBubbleParticle(), this.posX, d3, this.posZ, (int)(1.0F + this.width * 20.0F), (double)this.width, 0.0D, (double)this.width, 0.20000000298023224D);
-                worldserver.spawnParticle(getWakeParticle(), this.posX, d3, this.posZ, (int)(1.0F + this.width * 20.0F), (double)this.width, 0.0D, (double)this.width, 0.20000000298023224D);
+                worldserver.spawnParticle(getBubbleParticle(), this.posX, d3, this.posZ, (int)(1.0F + this.width * 20.0F), this.width, 0.0D, this.width, 0.20000000298023224D);
+                worldserver.spawnParticle(getWakeParticle(), this.posX, d3, this.posZ, (int)(1.0F + this.width * 20.0F), this.width, 0.0D, this.width, 0.20000000298023224D);
                 setTicksCatchable(this, MathHelper.getInt(this.rand, 20, 40));
             }
         }
@@ -272,7 +267,7 @@ public class EntityFMBCustomFishHook extends EntityFishHook {
                 float f6 = MathHelper.nextFloat(this.rand, 0.0F, 360.0F) * 0.017453292F;
                 float f7 = MathHelper.nextFloat(this.rand, 25.0F, 60.0F);
                 double d4 = this.posX + (double)(MathHelper.sin(f6) * f7 * 0.1F);
-                double d5 = (double)((float)MathHelper.floor(this.getEntityBoundingBox().minY) + 1.0F);
+                double d5 = (float)MathHelper.floor(this.getEntityBoundingBox().minY) + 1.0F;
                 double d6 = this.posZ + (double)(MathHelper.cos(f6) * f7 * 0.1F);
                 
                 BlockPos newPos = new BlockPos((int) d4, (int) d5 - 1, (int) d6);
@@ -307,7 +302,7 @@ public class EntityFMBCustomFishHook extends EntityFishHook {
         float f = MathHelper.sqrt(this.motionX * this.motionX + this.motionZ * this.motionZ);
         this.rotationYaw = (float)(MathHelper.atan2(this.motionX, this.motionZ) * (180D / Math.PI));
 
-        for(this.rotationPitch = (float)(MathHelper.atan2(this.motionY, (double)f) * (180D / Math.PI)); this.rotationPitch - this.prevRotationPitch < -180.0F; this.prevRotationPitch -= 360.0F) ;
+        for(this.rotationPitch = (float)(MathHelper.atan2(this.motionY, f) * (180D / Math.PI)); this.rotationPitch - this.prevRotationPitch < -180.0F; this.prevRotationPitch -= 360.0F) ;
 
         while(this.rotationPitch - this.prevRotationPitch >= 180.0F)  this.prevRotationPitch += 360.0F;
 
@@ -360,7 +355,7 @@ public class EntityFMBCustomFishHook extends EntityFishHook {
     }
     
     private void setHookedEntity() {
-        this.getDataManager().set(DATA_HOOKED_ENTITY, Integer.valueOf(this.caughtEntity.getEntityId() + 1));
+        this.getDataManager().set(DATA_HOOKED_ENTITY, this.caughtEntity.getEntityId() + 1);
     }
     
     private State getHookState(EntityFishHook hook) {

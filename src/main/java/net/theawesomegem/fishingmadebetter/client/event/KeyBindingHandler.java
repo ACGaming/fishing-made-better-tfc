@@ -29,7 +29,7 @@ public class KeyBindingHandler {
         	PrimaryPacketHandler.INSTANCE.sendToServer(new PacketKeybindS(PacketKeybindS.Keybind.REEL_OUT));
         }
         else {
-        	if(lastKeyPress==true) PrimaryPacketHandler.INSTANCE.sendToServer(new PacketKeybindS(PacketKeybindS.Keybind.NONE));
+        	if(lastKeyPress) PrimaryPacketHandler.INSTANCE.sendToServer(new PacketKeybindS(PacketKeybindS.Keybind.NONE));
         	lastKeyPress=false;
         }
 	}

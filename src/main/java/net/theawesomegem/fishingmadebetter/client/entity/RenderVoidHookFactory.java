@@ -13,5 +13,4 @@ public class RenderVoidHookFactory implements IRenderFactory<EntityFishHook> {
     public Render<? super EntityFishHook> createRenderFor(RenderManager manager) {
         return new RenderVoidHook(manager);
     }
-
 }

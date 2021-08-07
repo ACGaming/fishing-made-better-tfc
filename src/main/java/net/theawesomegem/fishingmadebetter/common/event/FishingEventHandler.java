@@ -150,7 +150,7 @@ public class FishingEventHandler {//God this handler is a mess
                 double d0 = player.posX - hook.posX;
                 double d1 = player.posY - hook.posY;
                 double d2 = player.posZ - hook.posZ;
-                double d3 = (double) MathHelper.sqrt(d0 * d0 + d1 * d1 + d2 * d2);
+                double d3 = MathHelper.sqrt(d0 * d0 + d1 * d1 + d2 * d2);
                 entityFishItem.motionX = d0 * 0.1D;
                 entityFishItem.motionY = d1 * 0.1D + (double) MathHelper.sqrt(d3) * 0.08D;
                 entityFishItem.motionZ = d2 * 0.1D;
@@ -168,7 +168,7 @@ public class FishingEventHandler {//God this handler is a mess
                     double d0 = player.posX - hook.posX;
                     double d1 = player.posY - hook.posY;
                     double d2 = player.posZ - hook.posZ;
-                    double d3 = (double) MathHelper.sqrt(d0 * d0 + d1 * d1 + d2 * d2);
+                    double d3 = MathHelper.sqrt(d0 * d0 + d1 * d1 + d2 * d2);
                     entityTreasureItem.motionX = d0 * 0.1D;
                     entityTreasureItem.motionY = d1 * 0.1D + (double) MathHelper.sqrt(d3) * 0.08D;
                     entityTreasureItem.motionZ = d2 * 0.1D;
@@ -485,7 +485,7 @@ public class FishingEventHandler {//God this handler is a mess
     }
 
     private int getDistanceTime(int weight) {
-        return (int)(1D+(Math.cbrt((double)(weight*weight))/10D));
+        return (int)(1D+(Math.cbrt(weight*weight)/10D));
     }
 
     private ItemStack getFishItemStack(FishCaughtData fishCaughtData, long currentTime, int weightModifier) {
@@ -547,12 +547,12 @@ public class FishingEventHandler {//God this handler is a mess
         double yPos = hook.getEntityBoundingBox().minY + 0.5D;
 
         if(hook instanceof EntityFMBCustomFishHook) {
-            worldServer.spawnParticle(((EntityFMBCustomFishHook)hook).getBubbleParticle(), hook.posX, yPos, hook.posZ, (int) (1.0F + hook.width * numberOfParticles), (double) hook.width, 0.0D, (double) hook.width, particleSpeed);
-            worldServer.spawnParticle(((EntityFMBCustomFishHook)hook).getWakeParticle(), hook.posX, yPos, hook.posZ, (int) (1.0F + hook.width * numberOfParticles), (double) hook.width, 0.0D, (double) hook.width, particleSpeed);
+            worldServer.spawnParticle(((EntityFMBCustomFishHook)hook).getBubbleParticle(), hook.posX, yPos, hook.posZ, (int) (1.0F + hook.width * numberOfParticles), hook.width, 0.0D, hook.width, particleSpeed);
+            worldServer.spawnParticle(((EntityFMBCustomFishHook)hook).getWakeParticle(), hook.posX, yPos, hook.posZ, (int) (1.0F + hook.width * numberOfParticles), hook.width, 0.0D, hook.width, particleSpeed);
         }
         else {
-            worldServer.spawnParticle(EnumParticleTypes.WATER_BUBBLE, hook.posX, yPos, hook.posZ, (int) (1.0F + hook.width * numberOfParticles), (double) hook.width, 0.0D, (double) hook.width, particleSpeed);
-            worldServer.spawnParticle(EnumParticleTypes.WATER_WAKE, hook.posX, yPos, hook.posZ, (int) (1.0F + hook.width * numberOfParticles), (double) hook.width, 0.0D, (double) hook.width, particleSpeed);
+            worldServer.spawnParticle(EnumParticleTypes.WATER_BUBBLE, hook.posX, yPos, hook.posZ, (int) (1.0F + hook.width * numberOfParticles), hook.width, 0.0D, hook.width, particleSpeed);
+            worldServer.spawnParticle(EnumParticleTypes.WATER_WAKE, hook.posX, yPos, hook.posZ, (int) (1.0F + hook.width * numberOfParticles), hook.width, 0.0D, hook.width, particleSpeed);
         }
     }
 
@@ -625,7 +625,7 @@ public class FishingEventHandler {//God this handler is a mess
 
         int pop = population.population;
 
-        int rate = (int)(900f * ((float)(100f-ItemBetterFishingRod.getHookItem(itemFishingRod).getBiteRateModifier())/100f));//Percentage reduction based on modifier
+        int rate = (int)(900f * ((100f-ItemBetterFishingRod.getHookItem(itemFishingRod).getBiteRateModifier()) /100f));//Percentage reduction based on modifier
         rate -= (100*EnchantmentHelper.getFishingSpeedBonus(itemFishingRod));//Max 60 seconds, -5 per lure level
         rate -= 4*pop;//-4 ticks per fish in population
         
@@ -735,7 +735,7 @@ public class FishingEventHandler {//God this handler is a mess
         }
         if(!offHandItem.isEmpty()) {
 	        if(offHandItem.getItem() instanceof ItemBetterFishingRod) return false;
-	        if(offHandItem.getItem() instanceof ItemFishingRod) return true;
+            return offHandItem.getItem() instanceof ItemFishingRod;
         }
         return false;
     }

@@ -84,7 +84,7 @@ public class CustomConfigurationHandler {
     	for(Map.Entry<String, FishData> dataEntry : fishDataMap.entrySet()) {
     		if(dataEntry.getValue().baitItemMap.isEmpty()) continue;
     		for(Map.Entry<String, Integer[]> baitEntry : dataEntry.getValue().baitItemMap.entrySet()) {
-    			ArrayList<Integer> metaArray = new ArrayList<Integer>();
+    			ArrayList<Integer> metaArray = new ArrayList<>();
     			if(possibleBaitMap.containsKey(baitEntry.getKey())) metaArray = possibleBaitMap.get(baitEntry.getKey());
     			metaArray.addAll(Arrays.asList(baitEntry.getValue()));
     			possibleBaitMap.put(baitEntry.getKey(), metaArray);

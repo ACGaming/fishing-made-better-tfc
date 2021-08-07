@@ -42,4 +42,3 @@ public class ChunkCapabilityProvider implements ICapabilitySerializable<NBTBase>
         return capability == CHUNK_FISHING_DATA_CAP ? CHUNK_FISHING_DATA_CAP.cast(chunkFishingData) : null;
     }
 }
-

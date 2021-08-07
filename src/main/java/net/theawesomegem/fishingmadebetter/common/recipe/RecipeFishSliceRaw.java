@@ -35,13 +35,12 @@ public class RecipeFishSliceRaw extends net.minecraftforge.registries.IForgeRegi
         ItemStack itemStackFish = inv.getStackInSlot(slots[1]);
         
         String fishId = BetterFishUtil.getFishId(itemStackFish);
-        String fishDisplayName = fishId;
         int fishWeight = BetterFishUtil.getFishWeight(itemStackFish);
 
         FishData fishData = CustomConfigurationHandler.fishDataMap.get(fishId);
         
         if(fishData.defaultFillet) {
-        	return ItemManager.FISH_SLICE_RAW.getItemStack(fishId, fishDisplayName, (fishData.filletUseWeight ? getSliceAmount(fishWeight) : 1));
+        	return ItemManager.FISH_SLICE_RAW.getItemStack(fishId, fishId, (fishData.filletUseWeight ? getSliceAmount(fishWeight) : 1));
         }
         else {
         	Item ret = Item.getByNameOrId(fishData.filletItem);

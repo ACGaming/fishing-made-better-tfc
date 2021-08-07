@@ -79,16 +79,16 @@ public abstract class ItemFishTracker extends Item {
     @Override
     public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn) {
     	ItemStack itemstack = playerIn.getHeldItem(handIn);
-        if(worldIn.isRemote) return new ActionResult<ItemStack>(EnumActionResult.FAIL, itemstack);
+        if(worldIn.isRemote) return new ActionResult<>(EnumActionResult.FAIL, itemstack);
 
         IFishingData fishingData = playerIn.getCapability(FishingCapabilityProvider.FISHING_DATA_CAP, null);
-        if(fishingData == null) return new ActionResult<ItemStack>(EnumActionResult.FAIL, itemstack);
+        if(fishingData == null) return new ActionResult<>(EnumActionResult.FAIL, itemstack);
 
-        if(fishingData.getTimeSinceTracking() > 0) return new ActionResult<ItemStack>(EnumActionResult.FAIL, itemstack);
+        if(fishingData.getTimeSinceTracking() > 0) return new ActionResult<>(EnumActionResult.FAIL, itemstack);
 
         RayTraceResult raytraceresult = this.rayTrace(worldIn, playerIn, true);
-        if(raytraceresult == null) return new ActionResult<ItemStack>(EnumActionResult.PASS, itemstack);
-        else if(raytraceresult.typeOfHit != RayTraceResult.Type.BLOCK) return new ActionResult<ItemStack>(EnumActionResult.PASS, itemstack);
+        if(raytraceresult == null) return new ActionResult<>(EnumActionResult.PASS, itemstack);
+        else if(raytraceresult.typeOfHit != RayTraceResult.Type.BLOCK) return new ActionResult<>(EnumActionResult.PASS, itemstack);
         
         BlockPos pos = raytraceresult.getBlockPos();
         IBlockState blockClicked = worldIn.getBlockState(pos);
@@ -96,25 +96,25 @@ public abstract class ItemFishTracker extends Item {
         if(trackingLiquid.equals(FishingLiquid.VOID)) {
         	if(pos.getY() > 3) {
         		playerIn.sendMessage(new TextComponentString("This probe can only be used on blocks near the Void."));
-        		return new ActionResult<ItemStack>(EnumActionResult.FAIL, itemstack);
+        		return new ActionResult<>(EnumActionResult.FAIL, itemstack);
         	}
         }
         else if(trackingLiquid.equals(FishingLiquid.FRESH_WATER)) {
         	if(blockClicked.getMaterial() != FluidsTFC.FRESH_WATER.get().getBlock().getBlockState().getBaseState().getMaterial()) {
         		playerIn.sendMessage(new TextComponentString("This probe can only work in Fresh Water."));
-        		return new ActionResult<ItemStack>(EnumActionResult.FAIL, itemstack);
+        		return new ActionResult<>(EnumActionResult.FAIL, itemstack);
         	}
         }
         else if(trackingLiquid.equals(FishingLiquid.SALT_WATER)) {
             if(blockClicked.getMaterial() != FluidsTFC.SALT_WATER.get().getBlock().getBlockState().getBaseState().getMaterial()) {
                 playerIn.sendMessage(new TextComponentString("This probe can only work in Salt Water."));
-                return new ActionResult<ItemStack>(EnumActionResult.FAIL, itemstack);
+                return new ActionResult<>(EnumActionResult.FAIL, itemstack);
             }
         }
         else if(trackingLiquid.equals(FishingLiquid.LAVA)) {
         	if(blockClicked.getMaterial() != Material.LAVA) {
         		playerIn.sendMessage(new TextComponentString("This probe can only work in Lava."));
-        		return new ActionResult<ItemStack>(EnumActionResult.FAIL, itemstack);
+        		return new ActionResult<>(EnumActionResult.FAIL, itemstack);
         	}
         } 
         
@@ -127,7 +127,7 @@ public abstract class ItemFishTracker extends Item {
         	}
         	if(waterCount < 25) {
         		playerIn.sendMessage(new TextComponentString("It is too shallow at this location for the probe to work properly."));
-        		return new ActionResult<ItemStack>(EnumActionResult.FAIL, itemstack);
+        		return new ActionResult<>(EnumActionResult.FAIL, itemstack);
         	}
         }
         if(blockClicked.getMaterial() == FluidsTFC.SALT_WATER.get().getBlock().getBlockState().getBaseState().getMaterial()) {
@@ -139,7 +139,7 @@ public abstract class ItemFishTracker extends Item {
             }
             if(waterCount < 25) {
                 playerIn.sendMessage(new TextComponentString("It is too shallow at this location for the probe to work properly."));
-                return new ActionResult<ItemStack>(EnumActionResult.FAIL, itemstack);
+                return new ActionResult<>(EnumActionResult.FAIL, itemstack);
             }
         }
         if(blockClicked.getMaterial() == MaterialLiquid.LAVA) {
@@ -151,7 +151,7 @@ public abstract class ItemFishTracker extends Item {
         	}
         	if(lavaCount < 25) {
         		playerIn.sendMessage(new TextComponentString("It is too shallow at this location for the probe to work properly."));
-        		return new ActionResult<ItemStack>(EnumActionResult.FAIL, itemstack);
+        		return new ActionResult<>(EnumActionResult.FAIL, itemstack);
         	}
         }
 
